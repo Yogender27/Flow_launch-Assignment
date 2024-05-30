@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaStar } from "react-icons/fa6"
 import Loading from './Loading';
+import { ImMan } from "react-icons/im";
 
 function Details() {
   const { productId } = useParams();
@@ -46,7 +47,10 @@ function Details() {
       <img className='border-4 p-4' src={product.image} alt={product.title} width="250" />
       
       <p className='font-bold text-2xl'>Price: ${product.price}</p>
-      <p className='font-bold text-2xl'>{product.rating.count} Reviews </p>
+      <div className='flex p-4'>
+      <p className='font-bold text-2xl'>{product.rating.count} Reviews</p>
+      <ImMan size={30}/>
+      </div>
       <div className='flex  justify-center align-middle items-center'>
       <p className='font-bold text-2xl'>Ratings {product.rating.rate} </p>
       
